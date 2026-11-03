@@ -3,14 +3,17 @@ name = "biko-analysis"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.15"
+requires-python = ">=3.13"
 dependencies = [
+    "en-core-web-trf",
     "jupyterlab>=4.6.5",
     "matplotlib>=3.11.2",
     "nbstripout>=0.9.1",
     "numpy>=2.5.4",
     "pandas>=3.1.0",
     "seaborn>=0.13.2",
+    "spacy>=3.8.18",
+    "wordcloud>=1.9.6",
 ]
 
 [project.scripts]
@@ -19,3 +22,6 @@ biko-analysis = "biko_analysis:main"
 [build-system]
 requires = ["uv_build>=0.13.5,<0.14.0"]
 build-backend = "uv_build"
+
+[tool.uv.sources]
+en-core-web-trf = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.8.0/en_core_web_trf-3.8.0-py3-none-any.whl" }
